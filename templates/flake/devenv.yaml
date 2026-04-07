@@ -1,0 +1,5 @@
+inputs:
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
+  nixpkgs-playwright:
+    url: github:NixOS/nixpkgs/7241bcbb4f099a66aafca120d37c65e8dda32717
