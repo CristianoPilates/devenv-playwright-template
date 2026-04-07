@@ -18,7 +18,12 @@
     {
       devShells.${system}.default = devenv.lib.mkShell {
         inherit inputs pkgs;
-        modules = [ ./devenv.nix ];
+        modules = [
+          ({ ... }: {
+            devenv.root = builtins.toString ./.;
+          })
+          ./devenv.nix
+        ];
       };
     };
 }
