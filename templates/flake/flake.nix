@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:cachix/devenv-nixpkgs/rolling";
     devenv.url = "github:cachix/devenv";
-    nixpkgs-playwright.url = "github:NixOS/nixpkgs/7241bcbb4f099a66aafca120d37c65e8dda32717";
+    nixpkgs-playwright.url = "github:NixOS/nixpkgs/993b198677ac7aea3719d2d2f03ae312ae9ee5ae";
   };
 
   nixConfig = {
@@ -10,7 +10,13 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = { self, nixpkgs, devenv, ... } @ inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      devenv,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -19,9 +25,12 @@
       devShells.${system}.default = devenv.lib.mkShell {
         inherit inputs pkgs;
         modules = [
-          ({ ... }: {
-            devenv.root = builtins.toString ./.;
-          })
+          (
+            { ... }:
+            {
+              devenv.root = builtins.toString ./.;
+            }
+          )
           ./devenv.nix
         ];
       };

@@ -5,10 +5,5 @@ export default defineConfig({
   use: {
     ...devices["Desktop Chrome"],
     headless: false,
-    launchOptions: process.env.PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH
-      ? {
-          executablePath: process.env.PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH,
-        }
-      : undefined,
   },
 });

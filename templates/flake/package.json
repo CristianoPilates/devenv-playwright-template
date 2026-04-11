@@ -2,15 +2,11 @@
   "name": "devenv-playwright-template",
   "private": true,
   "type": "module",
-  "devDependencies": {
-    "@playwright/test": "1.58.2"
-  },
+  "devDependencies": {},
   "packageManager": "bun@1.3.3",
   "scripts": {
-    "test": "bunx playwright test",
-    "test:ui": "bunx playwright test --ui"
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
   },
-  "dependencies": {
-    "playwright-core": "1.58.2"
-  }
+  "dependencies": {}
 }
