@@ -1,0 +1,6 @@
+.direnv
+.devenv
+node_modules
+test-results
+playwright-report
+bun.lock
