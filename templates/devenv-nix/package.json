@@ -2,7 +2,7 @@
   "name": "playwright-tests",
   "type": "module",
   "scripts": {
-    "test": "bun --bun playwright test"
+    "test": "bun playwright test"
   },
   "devDependencies": {
     "@playwright/test": "1.58.2"
